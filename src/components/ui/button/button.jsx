@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import style from "./button.module.css"
 
-export default function Button({title=""}){
+export default function Button({setId =() => {}, title=""}){
     return(
-        <button className={style.langButton}>{title}</button>
+        <button onClick={setId} className={style.langButton}>{title}</button>
     )
 }
