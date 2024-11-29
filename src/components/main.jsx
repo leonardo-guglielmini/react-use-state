@@ -18,14 +18,11 @@ export default function Main(){
             <Header/>
             <div className="container">
                 <section className={style.langSelect}>
-                    
                     {languages.map((lang)=>
-                        <div key={lang.id}>
-                            <Button title={lang.title} setId={()=>setCurrentId(lang.id)}/>
-                        </div>)}
-
-                    <Card title={lang.title} description={lang.description}/>
+                        <Button key={lang.id} item={lang} activeId={currentId} setId={()=>setCurrentId(lang.id)}/>
+                        )}
                 </section>
+                <Card title={lang.title} description={lang.description}/>
             </div>
         </main>
     )
