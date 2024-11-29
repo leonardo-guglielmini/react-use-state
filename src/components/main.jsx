@@ -10,7 +10,7 @@ import { useState } from "react"
 
 export default function Main(){
 
-    const [currentId, setCurrentId] = useState(1);
+    const [currentId, setCurrentId] = useState(null);
     let lang = languages.find((el) => el.id===currentId);
 
     return(
@@ -22,7 +22,9 @@ export default function Main(){
                         <Button key={lang.id} item={lang} activeId={currentId} setId={()=>setCurrentId(lang.id)}/>
                         )}
                 </section>
-                <Card title={lang.title} description={lang.description}/>
+                {currentId ? <Card title={lang.title} description={lang.description}/> : <Card title="Nessun linguaggio selezionato"/>
+                }
+                
             </div>
         </main>
     )
