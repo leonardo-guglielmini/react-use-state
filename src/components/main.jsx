@@ -22,9 +22,8 @@ export default function Main(){
                         <Button key={lang.id} item={lang} activeId={currentId} setId={()=>setCurrentId(lang.id)}/>
                         )}
                 </section>
-                {currentId ? <Card title={lang.title} description={lang.description}/> : <Card title="Nessun linguaggio selezionato"/>
-                }
-                
+
+                {currentId ? <Card title={lang.title} description={lang.description}/> : <Card title="Nessun linguaggio selezionato"/>}
             </div>
         </main>
     )
